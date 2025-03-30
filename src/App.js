@@ -1,12 +1,16 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
 import ContentGenerator from './ContentGenerator';
 
 function App() {
   return (
-    <div className="App">
-      <ContentGenerator />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/content-generator" element={<ContentGenerator />} />
+      </Routes>
+    </Router>
   );
 }
 
