@@ -1,8 +1,7 @@
- 
 [build]
   command = "cd react-app && npm install && npm run build"
-  functions = "functions"
   publish = "react-app/build"
+  functions = "functions"
 
 [[redirects]]
   from = "/*"
