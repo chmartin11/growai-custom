@@ -1,7 +1,9 @@
 [build]
   command = "cd react-app && npm install && npm run build"
   publish = "react-app/build"
-  functions = "functions"
+
+[functions]
+  directory = "functions"  # Only include if using serverless functions
 
 [[redirects]]
   from = "/*"
