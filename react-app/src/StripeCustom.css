@@ -1,0 +1,19 @@
+/* File: C:\nas-share\GrowAI-Website\react-app\src\StripeCustom.css */
+.StripeElement {
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  /* Ensure each field takes full width of its container */
+  .StripeElement iframe {
+    width: 100% !important;
+  }
+  
+  /* Add spacing between fields */
+  .StripeElement input {
+    margin-bottom: 10px;
+  }

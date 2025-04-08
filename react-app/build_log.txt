@@ -1,0 +1,88 @@
+Pulling latest changes from GitHub... 
+From https://github.com/chmartin11/growai-custom
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+Installing dependencies... 
+
+up to date, audited 1348 packages in 1s
+
+268 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (2 moderate, 6 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+Pulling latest changes from GitHub... 
+From https://github.com/chmartin11/growai-custom
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+Installing dependencies... 
+
+up to date, audited 1348 packages in 1s
+
+268 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (2 moderate, 6 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+Pulling latest changes from GitHub... 
+From https://github.com/chmartin11/growai-custom
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+Installing dependencies... 
+
+up to date, audited 1348 packages in 2s
+
+268 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (2 moderate, 6 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+Pulling latest changes from GitHub... 
+From https://github.com/chmartin11/growai-custom
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+Installing dependencies... 
+
+up to date, audited 1348 packages in 1s
+
+268 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (2 moderate, 6 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+Successfully navigated to project directory. 
+package.json found. 
+Step 5: Pulling latest changes from GitHub... 
+From https://github.com/chmartin11/growai-custom
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+Latest changes pulled successfully. 
+Step 6: Installing dependencies... 
+
+up to date, audited 1348 packages in 2s
+
+268 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (2 moderate, 6 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.

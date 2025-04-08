@@ -1,0 +1,40 @@
+/* src/ContentGenerator.css */
+.content-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.content-generator select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.content-generator button {
+  width: 100%;
+  background: #007BFF; /* Blue button */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.content-generator button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.generated-content {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #28A745; /* Green border */
+  border-radius: 5px;
+  color: #28A745;
+  background-color: #e6ffe6; /* Light green background */
+}

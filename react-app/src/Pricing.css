@@ -1,0 +1,10 @@
+/* src/Pricing.css */
+.pricing { text-align: center; padding: 20px; }
+.plans { display: flex; justify-content: center; gap: 20px; }
+.plan { background: #f0f4f8; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.plan h2 { font-size: 24px; margin-bottom: 10px; }
+.plan p { font-size: 18px; margin-bottom: 20px; }
+.plan ul { list-style: none; padding: 0; }
+.plan li { margin-bottom: 10px; }
+.cta-button { background: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+.cta-button:hover { background: #0056b3; }
