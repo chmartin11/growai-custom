@@ -3,9 +3,12 @@
   publish = "react-app/build"
 
 [functions]
-  directory = "functions"  # Only include if using serverless functions
+  directory = "functions"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[dev]
+  functionsTimeout = 60000  # 60 seconds for local development
