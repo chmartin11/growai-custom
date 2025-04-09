@@ -1,13 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
+import Home from './components/Home'; // Adjust if Home.js is elsewhere
+import Checkout from './components/Checkout'; // Adjust if Checkout.js is elsewhere
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* Add more routes here as needed, e.g., <Route path="/checkout" element={<Checkout />} /> */}
+        <Route path="/checkout" element={<Checkout />} />
+        {/* Add more routes here as needed */}
       </Routes>
     </Router>
   );

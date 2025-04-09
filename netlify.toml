@@ -1,7 +1,6 @@
 [build]
   command = "cd react-app && npm install && npm run build"
   publish = "react-app/build"
-  functions = "functions"
 
 [[redirects]]
   from = "/*"
@@ -11,4 +10,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://js.stripe.com; connect-src 'self' https://api.stripe.com;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://js.stripe.com; connect-src 'self' https://api.stripe.com; style-src 'self' 'unsafe-inline';"
