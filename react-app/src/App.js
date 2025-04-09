@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home'; // Your homepage component
-import Checkout from './components/Checkout'; // Your checkout component
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home} /> {/* Homepage */}
-        <Route path="/checkout" component={Checkout} /> {/* Checkout page */}
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* Add more routes here as needed, e.g., <Route path="/checkout" element={<Checkout />} /> */}
+      </Routes>
     </Router>
   );
 }
+
 export default App;
