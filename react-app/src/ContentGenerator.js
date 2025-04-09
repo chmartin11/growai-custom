@@ -1,86 +1,58 @@
 import React, { useState } from 'react';
+import './ContentGenerator.css';
 
 const ContentGenerator = () => {
-  const [prompt, setPrompt] = useState('');
-  const [contentType, setContentType] = useState('Social Media Post');
-  const [tone, setTone] = useState('Professional');
-  const [platform, setPlatform] = useState('Facebook');
-  const [output, setOutput] = useState('');
-  const [history, setHistory] = useState([]);
+  const [topic, setTopic] = useState('');
+  const [contentType, setContentType] = useState('blog');
+  const [tone, setTone] = useState('professional');
+  const [generatedContent, setGeneratedContent] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleGenerate = async () => {
-    if (!prompt) {
-      setOutput('Please enter a prompt.');
-      return;
-    }
     setLoading(true);
     try {
-      // Simulate API call (replace with real API)
-      const response = await fetch('/generate-content', {
+      const response = await fetch('/.netlify/functions/generate-content', {
         method: 'POST',
-        body: JSON.stringify({ prompt, contentType, tone, platform }),
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ topic, contentType, tone }),
       });
       const data = await response.json();
-      setOutput(data.content || 'Failed to generate content.');
-      setHistory([...history, { text: data.content, time: new Date().toLocaleString() }]);
+      setGeneratedContent(data.content);
     } catch (error) {
-      setOutput('Error: ' + error.message);
+      console.error('Error generating content:', error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: '200px', background: '#f0f0f0', padding: '10px' }}>
-        <h3>Menu</h3>
-        <ul>
-          <li>Generate Content</li>
-          <li>Templates</li>
-          <li>History</li>
-          <li>Settings</li>
-        </ul>
-      </div>
-      <div style={{ flex: 1, padding: '20px' }}>
-        <h2>Content Generator</h2>
-        <textarea
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter your topic or prompt"
-          style={{ width: '100%', height: '100px', marginBottom: '10px' }}
-        />
+    <div className="content-generator-container">
+      <h2>Generate Content</h2>
+      <form>
+        <label>Topic</label>
+        <input type="text" value={topic} onChange={(e) => setTopic(e.target.value)} />
+        <label>Content Type</label>
         <select value={contentType} onChange={(e) => setContentType(e.target.value)}>
-          <option>Social Media Post</option>
-          <option>Blog Post</option>
-          <option>Email</option>
+          <option value="blog">Blog Post</option>
+          <option value="social">Social Media Post</option>
+          <option value="product">Product Description</option>
         </select>
+        <label>Tone</label>
         <select value={tone} onChange={(e) => setTone(e.target.value)}>
-          <option>Professional</option>
-          <option>Casual</option>
-          <option>Persuasive</option>
+          <option value="professional">Professional</option>
+          <option value="casual">Casual</option>
+          <option value="friendly">Friendly</option>
         </select>
-        <select value={platform} onChange={(e) => setPlatform(e.target.value)}>
-          <option>Facebook</option>
-          <option>Twitter</option>
-          <option>Website</option>
-        </select>
-        <button onClick={handleGenerate} disabled={loading}>
-          {loading ? 'Generating...' : 'Generate Content'}
+        <button type="button" onClick={handleGenerate} disabled={loading}>
+          {loading ? 'Generating...' : 'Generate'}
         </button>
-        <div style={{ marginTop: '20px', border: '1px solid #ccc', padding: '10px' }}>
-          {output}
+      </form>
+      {generatedContent && (
+        <div className="generated-content">
+          <h3>Generated Content</h3>
+          <p>{generatedContent}</p>
         </div>
-        <div style={{ marginTop: '20px' }}>
-          <h3>Monitoring</h3>
-          <p>Generations: {history.length}</p>
-          <ul>
-            {history.map((item, idx) => (
-              <li key={idx}>{item.text.substring(0, 50)}... - {item.time}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

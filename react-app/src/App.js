@@ -1,17 +1,12 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './Home';
-import ContentGenerator from './ContentGenerator';
-import PaymentPage from './PaymentPage';
-import Blog from './Blog';
+import Home from './components/Home'; // Example existing component
+import Checkout from './components/Checkout'; // Add this import
 
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={() => window.location.href = '[invalid url, do not cite] />
-      <Route path="/home" component={Home} />
-      <Route path="/content-generator" component={ContentGenerator} />
-      <Route path="/payment" component={PaymentPage} />
-      <Route path="/blog" component={Blog} />
+      <Route path="/" component={Home} /> {/* Existing route */}
+      <Route path="/checkout" component={Checkout} /> {/* Add this route */}
     </Router>
   );
 }
