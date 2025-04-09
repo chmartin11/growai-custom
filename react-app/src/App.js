@@ -1,14 +1,15 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './components/Home'; // Example existing component
-import Checkout from './components/Checkout'; // Add this import
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Home'; // Your homepage component
+import Checkout from './components/Checkout'; // Your checkout component
 
 function App() {
   return (
     <Router>
-      <Route path="/" component={Home} /> {/* Existing route */}
-      <Route path="/checkout" component={Checkout} /> {/* Add this route */}
+      <Switch>
+        <Route exact path="/" component={Home} /> {/* Homepage */}
+        <Route path="/checkout" component={Checkout} /> {/* Checkout page */}
+      </Switch>
     </Router>
   );
 }
-
 export default App;
