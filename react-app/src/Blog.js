@@ -1,12 +1,7 @@
 import React from 'react';
 
-const Blog = () => {
-  return (
-    <div>
-      <h1>Blog</h1>
-      <p>Stay tuned for articles, guides, and tutorials on AI writing for e-commerce.</p>
-    </div>
-  );
+const Home = () => {
+  return <div>Welcome to GrowAI! This page is under construction.</div>;
 };
 
-export default Blog;
+export default Home;

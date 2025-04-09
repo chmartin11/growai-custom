@@ -1,17 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Checkout from './components/Checkout';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './Home';
+import ContentGenerator from './ContentGenerator';
+import PaymentPage from './PaymentPage';
+import Blog from './Blog';
 
 function App() {
   return (
     <Router>
-      <div>
-        <h1>Welcome to GrowAI</h1>
-        <Routes>
-          <Route path="/" element={<Checkout />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </div>
+      <Route exact path="/" component={() => window.location.href = '[invalid url, do not cite] />
+      <Route path="/home" component={Home} />
+      <Route path="/content-generator" component={ContentGenerator} />
+      <Route path="/payment" component={PaymentPage} />
+      <Route path="/blog" component={Blog} />
     </Router>
   );
 }

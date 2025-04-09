@@ -1,14 +1,14 @@
 [build]
   command = "cd react-app && npm install && npm run build"
   publish = "react-app/build"
-
-[functions]
-  directory = "functions"
+  functions = "functions"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[dev]
-  functionsTimeout = 60000  # 60 seconds for local development
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://js.stripe.com; connect-src 'self' https://api.stripe.com;"

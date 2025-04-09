@@ -9,15 +9,15 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { topic, content_type, tone } = JSON.parse(event.body);
+    const { topic, contentType, tone } = JSON.parse(event.body);
     const apiKey = process.env.HF_API_KEY;
-    const model = 'meta-llama/Llama-4-Scout-17B-16E-Instruct'; // Verify this
+    const model = 'meta-llama/Llama-4-Maverick-17B-128E-Instruct';
 
     const response = await axios.post(
       `https://api-inference.huggingface.co/models/${model}`,
       {
-        inputs: `Generate a ${content_type} about ${topic} in a ${tone} tone.`,
-        parameters: { max_length: 200 }
+        inputs: `Generate a ${contentType} about ${topic} in a ${tone} tone.`,
+        parameters: { max_length: 500 }
       },
       {
         headers: {
@@ -28,7 +28,6 @@ exports.handler = async (event) => {
     );
 
     const generatedContent = response.data[0].generated_text;
-
     return {
       statusCode: 200,
       body: JSON.stringify({ content: generatedContent })
