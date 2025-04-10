@@ -1,59 +1,93 @@
-/* src/Home.css */
-.home {
-  text-align: center;
-  padding: 20px;
-}
-
+/* react-app/src/components/Home.css */
 .hero {
-  background: #007BFF;
-  color: white;
-  padding: 50px 20px;
-  border-radius: 10px;
-  margin-bottom: 40px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%); /* Gradient instead of image */
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+  font-size: 3.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-.features, .testimonials, .cta {
-  margin: 40px 0;
+.cta-button {
+  background-color: #00ffcc;
+  color: #1a1a1a;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.features h2, .testimonials h2, .cta h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+.cta-button:hover {
+  background-color: #00ccaa;
+  transform: scale(1.05);
 }
 
-.features ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f8f9fa;
 }
 
-.features li {
-  background: #f0f4f8;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.feature-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.testimonials p {
-  font-style: italic;
-  color: #555;
+.feature-card:hover {
+  transform: translateY(-5px);
 }
 
-.cta {
-  background: #28A745;
-  color: white;
-  padding: 50px 20px;
-  border-radius: 10px;
+.feature-card h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-family: 'Roboto', sans-serif;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
 }
